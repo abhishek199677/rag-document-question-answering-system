@@ -3,3 +3,5 @@ pdfplumber
 numpy
 requests
 faiss-cpu
+python-dotenv
+openai
