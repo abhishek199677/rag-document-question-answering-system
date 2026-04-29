@@ -1,61 +1,65 @@
-# 🤖 MemoryBot: Industry-Ready PDF RAG Application
+# 🤖 MemoryBot: Production-Grade RAG Engine
 
-MemoryBot is a professional-grade Retrieval-Augmented Generation (RAG) application that allows users to chat with their PDF documents. It uses **OpenAI** for embeddings and chat completions, and **FAISS** for efficient vector similarity search.
+MemoryBot is a professional Retrieval-Augmented Generation (RAG) system designed for intelligent document interaction. It leverages **OpenAI** for advanced embeddings and chat reasoning, coupled with **FAISS** for lightning-fast vector similarity search.
 
 ---
 
-## 🏗️ Project Structure
+## 🏗️ Professional Project Structure
+The repository follows industry-standard modular patterns, ensuring scalability and ease of maintenance:
+
 ```text
-RAG_PDF_Application_Memorybot/
-├── .env                # API Keys & Configuration
-├── requirements.txt    # Dependencies
-├── main.py             # Streamlit UI (Entry Point)
-├── src/                # Core Logic
-│   ├── api_client.py   # OpenAI API Wrapper
-│   ├── processor.py    # PDF & Text Processing
-│   ├── vector_db.py    # FAISS Vector Management
-│   └── bot.py          # RAG Pipeline Coordinator
-├── data/               # Temporary storage for uploaded PDFs
-├── logs/               # Application performance logs
-└── README.md           # Documentation
+rag-document-question-answering-system/
+├── .github/                # CI/CD Workflows
+├── data/                   # Knowledge Base (PDF storage)
+├── docs/                   # Technical Documentation & Diagrams
+├── legacy/                 # Historical/Backup files
+├── logs/                   # System Performance & Audit Logs
+├── src/                    # Core Source Code
+│   ├── api_client.py       # LLM & Embedding Integrations
+│   ├── bot.py              # Orchestration Logic
+│   ├── processor.py        # Document Parsing & Chunking
+│   └── vector_db.py        # Vector Store Management
+├── tests/                  # Automated Test Suite
+├── .env.example            # Environment Configuration Template
+├── LICENSE                 # MIT License
+├── main.py                 # Streamlit Production Interface
+├── requirements.txt        # Managed Dependencies
+└── README.md               # Project Manifesto
 ```
 
-## 🚀 Features
-- **Industry Standard Modular Architecture**: Decoupled UI and business logic.
-- **Persistent Knowledge Base**: Efficient indexing using FAISS.
-- **Premium UI**: Modern Streamlit interface with chat history support.
-- **Environment Management**: Secure handling of API keys via `.env`.
-- **Structured Logging**: Track application behavior and errors.
+## 🚀 Key Features
+- **Modular RAG Pipeline**: Decoupled ingestion, indexing, and retrieval layers.
+- **High-Performance Search**: FAISS-powered semantic retrieval for millisecond response times.
+- **Premium UX/UI**: Sleek, responsive Streamlit dashboard with conversational memory.
+- **Production-Ready Logging**: Comprehensive logging for debugging and monitoring.
+- **CI/CD Integrated**: Automated linting and testing via GitHub Actions.
 
-## 🛠️ Setup Instructions
+## 🛠️ Quick Start
 
-### 1. Prerequisites
-- Python 3.9+
-- An API Key from OpenAI
-
-### 2. Installation
-Clone the repository and install dependencies:
+### 1. Installation
+Clone the repository and install the required packages:
 ```bash
 pip install -r requirements.txt
 ```
 
-### 3. Configuration
-Rename `.env.example` to `.env` and add your API key:
-```env
-OPENAI_API_KEY=your_key_here
+### 2. Configuration
+Copy the environment template and provide your API credentials:
+```bash
+cp .env.example .env
+# Edit .env with your OPENAI_API_KEY
 ```
 
-### 4. Running the App
-Launch the Streamlit dashboard:
+### 3. Execution
+Launch the production server:
 ```bash
 streamlit run main.py
 ```
 
-## 🧠 How it Works
-1. **Ingestion**: The user uploads a PDF. `processor.py` extracts text and chunks it.
-2. **Indexing**: `api_client.py` gets embeddings for chunks, and `vector_db.py` stores them in a FAISS index.
-3. **Querying**: When a user asks a question, the query is embedded, and relevant chunks are retrieved.
-4. **Generation**: The context + question are sent to OpenAI's LLM (GPT-3.5-Turbo) to generate a response.
+## 🧠 Core Architecture
+1. **Extraction**: `processor.py` handles multi-page PDF text extraction and semantic chunking.
+2. **Embedding**: `api_client.py` transforms text chunks into high-dimensional vectors.
+3. **Indexing**: `vector_db.py` constructs a spatial index for efficient querying.
+4. **Reasoning**: `bot.py` manages the conversational flow, context injection, and LLM synthesis.
 
 ---
-Created by Antigravity AI
+Developed with focus on **Reliability**, **Performance**, and **Developer Experience**.
